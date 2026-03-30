@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #fef9f0 0%, #f8f0e7 100%);
-  color: #2c2a2a;
+  background: linear-gradient(135deg, #f5f0ff 0%, #e9e4ff 100%);
+  color: #2d2b3a;
   line-height: 1.5;
   padding: 2rem 1.5rem;
   min-height: 100vh;
@@ -27,8 +27,8 @@ header {
 
 .header-badge {
   display: inline-block;
-  background: #ffe6d5;
-  color: #b45f2b;
+  background: #ddd0ff;
+  color: #6b4e9e;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.3rem 1rem;
@@ -43,24 +43,24 @@ h1 {
   font-weight: 600;
   font-family: 'Quicksand', sans-serif;
   margin-bottom: 0.5rem;
-  color: #2c3e4e;
+  color: #4a3b6e;
 }
 
 .highlight {
-  background: linear-gradient(120deg, #f9d8c6 0%, #f9d8c6 40%, transparent 60%);
+  background: linear-gradient(120deg, #c5b3ff 0%, #c5b3ff 40%, transparent 60%);
   padding: 0 0.2rem;
   display: inline-block;
 }
 
 .tagline {
   font-size: 1.1rem;
-  color: #6b6a6a;
+  color: #7b6b9e;
   font-weight: 400;
   margin-top: 0.25rem;
 }
 
 .divider {
-  color: #d9b48b;
+  color: #b8a9e6;
   font-size: 0.8rem;
   letter-spacing: 2px;
   margin-top: 1rem;
@@ -80,9 +80,9 @@ main {
   border-radius: 28px;
   padding: 1.8rem;
   width: 280px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(106, 90, 165, 0.1);
   transition: all 0.25s ease;
-  border: 1px solid #ffefdf;
+  border: 1px solid #e4dcff;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -90,8 +90,8 @@ main {
 
 .topic-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
-  border-color: #f7d5b5;
+  box-shadow: 0 18px 30px rgba(106, 90, 165, 0.15);
+  border-color: #b8a3ff;
 }
 
 .card-icon {
@@ -103,12 +103,12 @@ main {
   font-size: 1.6rem;
   font-weight: 600;
   font-family: 'Quicksand', sans-serif;
-  color: #2c3e4e;
+  color: #4a3b6e;
   margin-bottom: 0.75rem;
 }
 
 .topic-card p {
-  color: #5a5a5a;
+  color: #6a5a8a;
   font-size: 0.9rem;
   margin-bottom: 1.2rem;
   line-height: 1.5;
@@ -123,8 +123,8 @@ main {
 }
 
 .card-tags span {
-  background: #fef3e9;
-  color: #b45f2b;
+  background: #f0ebff;
+  color: #7b4cbf;
   font-size: 0.7rem;
   font-weight: 500;
   padding: 0.2rem 0.7rem;
@@ -134,7 +134,7 @@ main {
 
 .card-link {
   display: inline-block;
-  background: #2c3e4e;
+  background: #8b74d4;
   color: white;
   text-decoration: none;
   padding: 0.6rem 1.2rem;
@@ -148,7 +148,7 @@ main {
 }
 
 .card-link:hover {
-  background: #b45f2b;
+  background: #6b4e9e;
   transform: scale(0.98);
 }
 
@@ -156,8 +156,8 @@ main {
 footer {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid #ffe1cc;
-  color: #8f8b87;
+  border-top: 1px solid #ddd0ff;
+  color: #8f82b3;
   font-size: 0.85rem;
 }
 
@@ -184,4 +184,4 @@ footer p {
     width: 100%;
     max-width: 340px;
   }
-}
+    }
