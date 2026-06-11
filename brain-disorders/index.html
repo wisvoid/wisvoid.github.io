@@ -3,75 +3,323 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brain & Mental Disorders ✨</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Brain & Mental Disorders ☁️🔵 Blue Light Edition</title>
+  <!-- Google Fonts for clean, modern typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* DEEP & BRIGHT BLUISH BLUE LIGHT — vibrant, airy, electric sky tone */
+      background: linear-gradient(135deg, #7bc8f5 0%, #4ba9e0 35%, #2d8fcf 100%);
+      /* even more blueish, fresh & luminous */
+      font-family: 'Inter', 'Quicksand', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: #0a2f42;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+    }
+
+    /* lively bubble / light dots overlay for playful blue depth */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 15% 30%, rgba(255, 255, 255, 0.28) 2%, transparent 2.5%),
+                        radial-gradient(circle at 85% 70%, rgba(255, 250, 210, 0.2) 1.2%, transparent 2%);
+      background-size: 65px 65px, 90px 90px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(2px);
+      border-radius: 2.5rem;
+      padding: 2rem 2rem 2rem 2rem;
+      box-shadow: 0 25px 40px -12px rgba(0, 30, 60, 0.35), 0 2px 6px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: #d9efff;
+      padding: 0.35rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #1a6c91;
+      backdrop-filter: blur(2px);
+      background-color: rgba(235, 248, 255, 0.95);
+      margin-bottom: 1rem;
+      font-family: 'Quicksand', sans-serif;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2.9rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0e5c82, #1d7ea8, #339ac7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.01em;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, #c4e6ff, #a2d4fc);
+      padding: 0 0.2rem;
+      border-radius: 24px;
+      color: #075e84;
+      display: inline-block;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #235f7c;
+      font-weight: 470;
+      margin-top: 0.3rem;
+    }
+
+    .divider {
+      font-size: 1rem;
+      letter-spacing: 6px;
+      color: #64b5e0;
+      margin-top: 1.2rem;
+    }
+
+    /* cards grid – 4 cards for mental disorders */
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .topic-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(2px);
+      border-radius: 2rem;
+      padding: 1.8rem 1.5rem 1.8rem 1.5rem;
+      flex: 1;
+      min-width: 240px;
+      max-width: 340px;
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
+      box-shadow: 0 12px 22px -8px rgba(0, 70, 100, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .topic-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 32px -12px rgba(18, 85, 120, 0.3);
+      background: white;
+      border-color: #b7def5;
+    }
+
+    .card-icon {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .topic-card h2 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: #115e7a;
+      margin-bottom: 0.75rem;
+    }
+
+    .topic-card p {
+      color: #2c576e;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.45;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .card-tags span {
+      background: #e2f2fe;
+      padding: 0.2rem 0.85rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #136f92;
+      letter-spacing: 0.2px;
+      transition: all 0.1s ease;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      color: #1b86ad;
+      text-decoration: none;
+      border-bottom: 2px solid #b8dcf5;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .card-link:hover {
+      color: #0e5d7c;
+      border-bottom-color: #2a8bb0;
+      gap: 0.65rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #bbd9ec;
+      font-size: 0.85rem;
+      color: #1b6c8d;
+    }
+
+    footer p {
+      margin: 0.3rem 0;
+    }
+
+    footer a {
+      color: #217faa;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #a1cee8;
+      transition: all 0.2s;
+    }
+
+    footer a:hover {
+      color: #0c5779;
+      border-bottom-color: #0c6b8f;
+    }
+
+    .footer-note {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    /* responsive */
+    @media (max-width: 780px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .topic-card {
+        max-width: 100%;
+      }
+    }
+
+    /* extra blue sparkle - light reflection effect */
+    .container::after {
+      content: "💧";
+      font-size: 3rem;
+      opacity: 0.12;
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      pointer-events: none;
+      transform: rotate(5deg);
+    }
+  </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <div class="header-badge">🧠 research notes</div>
-      <h1>Brain & <span class="highlight">Mental Disorders</span></h1>
-      <p class="tagline">understanding the brain • exploring mental health • impact on others</p>
-      <div class="divider">✦ ✦ ✦</div>
-    </header>
+<div class="container">
+  <header>
+    <div class="header-badge">🧠 research notes • blue light focus</div>
+    <h1>Brain & <span class="highlight">Mental Disorders</span></h1>
+    <p class="tagline">understanding the brain • exploring mental health • impact on others</p>
+    <div class="divider">✦ 💙 ✦</div>
+  </header>
 
-    <main>
-      <div class="topic-card">
-        <div class="card-icon">🌀</div>
-        <h2>Schizophrenia</h2>
-        <p>Understanding psychosis, delusions, hallucinations and the impact on individuals and families.</p>
-        <div class="card-tags">
-          <span>psychosis</span>
-          <span>delusions</span>
-          <span>recovery</span>
-        </div>
-        <a href="schizophrenia/index.html" class="card-link">read research →</a>
+  <main>
+    <!-- Schizophrenia card -->
+    <div class="topic-card">
+      <div class="card-icon">🌀</div>
+      <h2>Schizophrenia</h2>
+      <p>Understanding psychosis, delusions, hallucinations and the impact on individuals and families.</p>
+      <div class="card-tags">
+        <span>psychosis</span>
+        <span>delusions</span>
+        <span>recovery</span>
       </div>
+      <a href="schizophrenia/index.html" class="card-link">read research →</a>
+    </div>
 
-      <div class="topic-card">
-        <div class="card-icon">💭</div>
-        <h2>Alzheimer's Disease</h2>
-        <p>Memory loss, cognitive decline and factors of dementia</p>
-        <div class="card-tags">
-          <span>memory</span>
-          <span>dementia</span>
-          <span>caregiving</span>
-        </div>
-        <a href="alzheimers/index.html" class="card-link">read research →</a>
+    <!-- Alzheimer's Disease card -->
+    <div class="topic-card">
+      <div class="card-icon">💭</div>
+      <h2>Alzheimer's Disease</h2>
+      <p>Memory loss, cognitive decline and factors of dementia</p>
+      <div class="card-tags">
+        <span>memory</span>
+        <span>dementia</span>
+        <span>caregiving</span>
       </div>
+      <a href="alzheimers/index.html" class="card-link">read research →</a>
+    </div>
 
-      <div class="topic-card">
-        <div class="card-icon">⚡</div>
-        <h2>Bipolar Disorder</h2>
-        <p>The highs of mania and the lows of depression, understanding mood instability and its treatment.</p>
-        <div class="card-tags">
-          <span>mania</span>
-          <span>depression</span>
-          <span>mood</span>
-        </div>
-        <a href="bipolar/index.html" class="card-link">read research →</a>
+    <!-- Bipolar Disorder card -->
+    <div class="topic-card">
+      <div class="card-icon">⚡</div>
+      <h2>Bipolar Disorder</h2>
+      <p>The highs of mania and the lows of depression, understanding mood instability and its treatment.</p>
+      <div class="card-tags">
+        <span>mania</span>
+        <span>depression</span>
+        <span>mood</span>
       </div>
+      <a href="bipolar/index.html" class="card-link">read research →</a>
+    </div>
 
-      <div class="topic-card">
-        <div class="card-icon">🔄</div>
-        <h2>Dissociative Identity Disorder</h2>
-        <p>Understanding personality changes, DID, trauma and identity fragmentation.</p>
-        <div class="card-tags">
-          <span>trauma</span>
-          <span>identity</span>
-          <span>dissociation</span>
-        </div>
-        <a href="dissociative-identity/index.html" class="card-link">read research →</a>
+    <!-- Dissociative Identity Disorder card -->
+    <div class="topic-card">
+      <div class="card-icon">🔄</div>
+      <h2>Dissociative Identity Disorder</h2>
+      <p>Understanding personality changes, DID, trauma and identity fragmentation.</p>
+      <div class="card-tags">
+        <span>trauma</span>
+        <span>identity</span>
+        <span>dissociation</span>
       </div>
-    </main>
+      <a href="dissociative-identity/index.html" class="card-link">read research →</a>
+    </div>
+  </main>
 
-    <footer>
-      <p><a href="../index.html" style="color: #8b74d4; text-decoration: none;">← back to home</a></p>
-      <p class="footer-note">research on psych topics • brain & mental disorders</p>
-    </footer>
-  </div>
+  <footer>
+    <p><a href="../index.html">← back to home</a> &nbsp;|&nbsp; <span style="color:#297e9e;">☁️ blue research hub</span></p>
+    <p class="footer-note">research on psych topics • brain & mental disorders • blue light edition</p>
+  </footer>
+</div>
 
 </body>
-  </html>
+</html>
