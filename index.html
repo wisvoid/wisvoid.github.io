@@ -1,67 +1,300 @@
-oo<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini Psych Research 👀</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Mini Psych Research ☁️ Sky Blue Edition</title>
+  <!-- Google Fonts for clean, friendly typography -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* 🎨 SKY BLUE COLOR CHANGE – from purple to fresh sky blue */
+      background: linear-gradient(145deg, #b8e1fc 0%, #c7e9ff 45%, #d9f0ff 100%);
+      /* soft, airy gradient that mimics a bright morning sky */
+      font-family: 'Inter', 'Quicksand', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: #0b2f3c;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+    }
+
+    /* subtle animated cloud-like texture overlay (just for whimsy) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.25) 2%, transparent 2.5%),
+                        radial-gradient(circle at 70% 85%, rgba(255, 255, 255, 0.2) 1.5%, transparent 2%);
+      background-size: 55px 55px, 80px 80px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(1.5px);
+      border-radius: 2.5rem;
+      padding: 2rem 2rem 2rem 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 40, 60, 0.2), 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* header area — soft, dreamy sky vibes */
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: #ffe9c7;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #2c6e8f;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255, 245, 220, 0.9);
+      margin-bottom: 1rem;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #166d8a, #1e8eb0, #2fa3c9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.01em;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, #e0f3ff, #cae9ff);
+      padding: 0 0.2rem;
+      border-radius: 18px;
+      color: #075e7c;
+      display: inline-block;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #2c5c72;
+      font-weight: 450;
+      margin-top: 0.25rem;
+    }
+
+    .divider {
+      font-size: 1rem;
+      letter-spacing: 6px;
+      color: #8cc9e3;
+      margin-top: 1.2rem;
+    }
+
+    /* main grid – three card layout */
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .topic-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 2rem;
+      padding: 1.8rem 1.5rem 1.8rem 1.5rem;
+      flex: 1;
+      min-width: 260px;
+      max-width: 350px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 20px -5px rgba(0, 60, 80, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .topic-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 30px -12px rgba(46, 125, 150, 0.25);
+      background: white;
+      border-color: #cae3f0;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .topic-card h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #115e7a;
+      margin-bottom: 0.8rem;
+    }
+
+    .topic-card p {
+      color: #2c4f60;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.45;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .card-tags span {
+      background: #e2f0f7;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #146b89;
+      letter-spacing: 0.2px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      color: #1582a3;
+      text-decoration: none;
+      border-bottom: 2px solid #b9def0;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .card-link:hover {
+      color: #0b5068;
+      border-bottom-color: #0f7da0;
+      gap: 0.6rem;
+    }
+
+    /* footer - soft and matching */
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #bddbe9;
+      font-size: 0.85rem;
+      color: #2a6d89;
+    }
+
+    footer p {
+      margin: 0.25rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.75rem;
+      opacity: 0.75;
+    }
+
+    /* responsiveness */
+    @media (max-width: 780px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .topic-card {
+        max-width: 100%;
+      }
+    }
+
+    /* extra little custom cloud accent for joy */
+    .container::after {
+      content: "☁️";
+      font-size: 3.2rem;
+      opacity: 0.12;
+      position: absolute;
+      bottom: 20px;
+      right: 25px;
+      pointer-events: none;
+      transform: rotate(-5deg);
+    }
+  </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <div class="header-badge">🧠 research notes</div>
-      <h1>Research On <span class="highlight">Psych Topics</span></h1>
-      <p class="tagline">exploring the mind • understanding disorders • healing from trauma</p>
-      <div class="divider">✦ ✦ ✦</div>
-    </header>
+<div class="container">
+  <header>
+    <div class="header-badge">🧠 research notes ✨ sky edition</div>
+    <h1>Research On <span class="highlight">Psych Topics</span></h1>
+    <p class="tagline">exploring the mind • understanding disorders • healing from trauma</p>
+    <div class="divider">✦ ☁️ ✦</div>
+  </header>
 
-    <main>
-      <!-- Topic 1: Brain & Mental Disorders (with subfolders) -->
-      <div class="topic-card">
-        <div class="card-icon">🧠</div>
-        <h2>Brain & Mental Disorders</h2>
-        <p>Understanding neurological conditions, mental health disorders and how they affect the brain and behavior in general.</p>
-        <div class="card-tags">
-          <span>depression</span>
-          <span>anxiety</span>
-          <span>neuroplasticity</span>
-        </div>
-        <a href="brain-disorders/index.html" class="card-link">explore →</a>
+  <main>
+    <!-- Topic 1: Brain & Mental Disorders (with subfolders) -->
+    <div class="topic-card">
+      <div class="card-icon">🧠</div>
+      <h2>Brain & Mental Disorders</h2>
+      <p>Understanding neurological conditions, mental health disorders and how they affect the brain and behavior in general.</p>
+      <div class="card-tags">
+        <span>depression</span>
+        <span>anxiety</span>
+        <span>neuroplasticity</span>
       </div>
+      <a href="brain-disorders/index.html" class="card-link">explore →</a>
+    </div>
 
-      <!-- Topic 2: Brain & Trauma -->
-      <div class="topic-card">
-        <div class="card-icon">💔🥀</div>
-        <h2>How The Brain Reacts to Trauma</h2>
-        <p>The neuroscience of trauma, how the brain responds, adapts and heals from traumatic experiences.</p>
-        <div class="card-tags">
-          <span>PTSD</span>
-          <span>fight or flight</span>
-          <span>healing</span>
-        </div>
-        <a href="trauma-brain/index.html" class="card-link">explore →</a>
+    <!-- Topic 2: Brain & Trauma -->
+    <div class="topic-card">
+      <div class="card-icon">💔🥀</div>
+      <h2>How The Brain Reacts to Trauma</h2>
+      <p>The neuroscience of trauma, how the brain responds, adapts and heals from traumatic experiences.</p>
+      <div class="card-tags">
+        <span>PTSD</span>
+        <span>fight or flight</span>
+        <span>healing</span>
       </div>
+      <a href="trauma-brain/index.html" class="card-link">explore →</a>
+    </div>
 
-      <!-- Topic 3: (Add your third topic here) -->
-      <div class="topic-card">
-        <div class="card-icon">✨</div>
-        <h2>Theories Of Personality</h2>
-        <p>Forensics</p>
-        <div class="card-tags">
-          <span>Psychopath</span>
-          <span>Empath</span>
-        </div>
-        <a href="third-topic/index.html" class="card-link">explore →</a>
+    <!-- Topic 3: Theories Of Personality & Forensics -->
+    <div class="topic-card">
+      <div class="card-icon">✨🔍</div>
+      <h2>Theories Of Personality</h2>
+      <p>Forensics & personality psychology: exploring the depths of human nature, traits, and behavioural patterns.</p>
+      <div class="card-tags">
+        <span>Psychopath</span>
+        <span>Empath</span>
+        <span>Dark triad</span>
       </div>
-    </main>
+      <a href="third-topic/index.html" class="card-link">explore →</a>
+    </div>
+  </main>
 
-    <footer>
-      <p> made with curiosity ° small projects 🌸</p>
-      <p class="footer-note">research on psych topics • github pages</p>
-    </footer>
-  </div>
+  <footer>
+    <p> made with curiosity ° small projects 🌸</p>
+    <p class="footer-note">research on psych topics • github pages • fresh sky edit ☀️</p>
+  </footer>
+</div>
 
 </body>
 </html>
